@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+	<meta charset="utf-8">
+	<title>Alex Pharmacy</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- favicon -->
+	  <link rel="icon" href="image/favicon.png" type="image/png" sizes="16x16">
+
+	<!-- Font-->
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="fonts/line-awesome/css/line-awesome.min.css">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="css/signup.css"/>
+</head>
+<body class="form-v4">
+	<div class="page-content text-right" style="background-image: url('image/bg-01.jpg');">
+		<div class="form-v4-content">
+			<div class="form-left">
+				<h2>معلومات</h2>
+				<p class="text-1">لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
+
+أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد
+
+أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس
+
+أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت
+
+نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا
+</p>
+				<p class="text-2"><span>اي هبل:</span> كسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس
+
+أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت
+
+نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا</p>
+				<div class="form-left-last">
+					<input type="submit" name="account" class="account" value="تمتلك حساب">
+				</div>
+			</div>
+			<form class="form-detail text-right" action="#" method="post" id="myform">
+				<h2>إنشاء حساب جديد</h2>
+				<div class="form-group">
+				
+					<div class="form-row form-row-1">
+						<label for="last_name" class="f-right">اسم العائلة</label>
+						<input type="text" name="last_name" id="last_name" class="input-text" placeholder="اسم العائلة">
+					</div>
+						<div class="form-row form-row-1 text-right">
+						<label for="first_name " class="f-right">الاسم الاول</label>
+						<input type="text" name="first_name" id="first_name" class="input-text" placeholder="الاسم الاول">
+					</div>
+				</div>
+				<div class="form-row">
+					<label for="your_email"  class="f-right">البريد الالكتروني</label>
+					<input type="text" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+				</div>
+				<div class="form-group">
+					<div class="form-row form-row-1 ">
+						<label for="password" class="f-right">كلمة المرور</label>
+						<input type="password" name="password" id="password" class="input-text" required>
+					</div>
+					<div class="form-row form-row-1">
+						<!-- hidden input for php -->
+						<input type="hidden" name="hidden">
+						<label for="comfirm-password" class="f-right">تأكيد كلمة المرور</label>
+						<input type="password" name="comfirm_password" id="comfirm_password" class="input-text" required>
+					</div>
+				</div>
+				<div class="form-row-last">
+					<input type="submit" name="register" class="register" value="سجل الان">
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script>
+		// just for the demos, avoids form submit
+		jQuery.validator.setDefaults({
+		  	debug: true,
+		  	success:  function(label){
+        		label.attr('id', 'valid');
+   		 	},
+		});
+		$( "#myform" ).validate({
+		  	rules: {
+			    password: "required",
+		    	comfirm_password: {
+		      		equalTo: "#password"
+		    	}
+		  	},
+		  	messages: {
+		  		first_name: {
+		  			required: "Please enter a firstname"
+		  		},
+		  		last_name: {
+		  			required: "Please enter a lastname"
+		  		},
+		  		your_email: {
+		  			required: "Please provide an email"
+		  		},
+		  		password: {
+	  				required: "Please enter a password"
+		  		},
+		  		comfirm_password: {
+		  			required: "Please enter a password",
+		      		equalTo: "Wrong Password"
+		    	}
+		  	}
+		});
+	</script>
+</body>
+</html>
